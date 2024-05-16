@@ -1,5 +1,7 @@
 # PMB
+Espace de travail ouvert dans la perspective d'initier un travail interacadémique de développement du logiciel PMB.
 
+PMB est un logiciel et portail documentaire sous licence libre utilisé dans de nombreux établissements scolaires et déployé par de nombreuses académies.
 
 
 ## Getting started
