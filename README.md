@@ -4,14 +4,13 @@ Espace de travail ouvert dans la perspective d'initier un travail interacadémiq
 PMB est un logiciel et portail documentaire sous licence libre utilisé dans de nombreux établissements scolaires et déployé par de nombreuses académies.
 
 
-[
+[comment]:
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!]: #
-
-[comment]: #
+Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+ #
 ## Add your files
 
 - [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
