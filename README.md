@@ -4,6 +4,7 @@ Espace de travail ouvert dans la perspective d'initier un travail interacadémiq
 PMB est un logiciel et portail documentaire sous licence libre utilisé dans de nombreux établissements scolaires et déployé par de nombreuses académies.
 
 
+<div class="hidden">Ce texte est caché.</div>
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
