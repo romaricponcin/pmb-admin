@@ -1,0 +1,111 @@
+/* ============================================================================
+   THÈME « ac_aixmarseille_rgaa » — 2/ BASE & ACCESSIBILITÉ RGAA 4.1
+   Cible le DOM réel généré par PMB (body#pmbopac, #container, …).
+   ========================================================================== */
+
+html { font-size: var(--fs-root); -webkit-text-size-adjust: 100%; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    transition-duration: .001ms !important;
+  }
+}
+
+body#pmbopac {
+  font-family: var(--font-base) !important;
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  letter-spacing: var(--ls-base);
+  word-spacing: var(--ws-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* PMB applique souvent des petites tailles : on normalise. */
+body#pmbopac td, body#pmbopac p, body#pmbopac li, body#pmbopac label,
+body#pmbopac input, body#pmbopac select, body#pmbopac button {
+  font-family: var(--font-base);
+  font-size: var(--fs-base);
+}
+
+body#pmbopac h1, body#pmbopac h2, body#pmbopac h3, body#pmbopac h4 {
+  font-family: var(--font-base);
+  line-height: var(--lh-tight);
+  font-weight: 700;
+  color: var(--color-text);
+  text-wrap: balance;
+}
+body#pmbopac h1 { font-size: var(--fs-2xl); }
+body#pmbopac h2 { font-size: var(--fs-xl); }
+body#pmbopac h3 { font-size: var(--fs-lg); }
+body#pmbopac h4 { font-size: var(--fs-md); }
+
+body#pmbopac a { color: var(--color-link); text-underline-offset: .15em; }
+body#pmbopac a:visited { color: var(--color-link-visited); }
+body#pmbopac a:hover { color: var(--color-primary-hover); }
+
+/* ----- FOCUS VISIBLE (RGAA 10.7) — ne JAMAIS le retirer ----- */
+body#pmbopac :focus { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+body#pmbopac :focus:not(:focus-visible) { outline: none; }
+body#pmbopac :focus-visible { outline: var(--focus-ring); outline-offset: var(--focus-offset); }
+
+/* ----- Liens d'évitement (RGAA 12.7) -----
+   PMB/CMS : injecter le bloc .skip-links via un module HTML (voir README).
+   Ces styles le rendent invisible jusqu'au focus clavier. */
+.skip-links { position: absolute; top: 0; left: 0; z-index: 2000; width: 100%; }
+.skip-links ul { display: flex; margin: 0; padding: 0; list-style: none; }
+.skip-links a {
+  position: absolute; left: -9999px;
+  display: inline-block; padding: var(--sp-3) var(--sp-5);
+  background: var(--bleu-france); color: #fff !important;
+  font-weight: 500; text-decoration: underline;
+}
+.skip-links a:focus { position: static; left: auto; outline: 3px solid #fff; outline-offset: -6px; }
+
+/* Classe utilitaire déjà utilisée par PMB */
+.visually-hidden {
+  position: absolute !important; width: 1px !important; height: 1px !important;
+  padding: 0 !important; margin: -1px !important; overflow: hidden !important;
+  clip: rect(0 0 0 0) !important; white-space: nowrap !important; border: 0 !important;
+}
+
+/* Anciennes balises présentes dans les contenus CMS : neutraliser l'effet */
+body#pmbopac center { text-align: inherit; }
+
+/* Boutons normalisés (PMB : .bouton, input[type=submit]) */
+body#pmbopac .bouton,
+body#pmbopac input[type="submit"],
+body#pmbopac input[type="button"] {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--color-primary); color: var(--color-primary-text);
+  border: 2px solid transparent; border-radius: var(--radius);
+  font: inherit; font-weight: 600; cursor: pointer;
+  min-height: 44px; /* cible tactile RGAA */
+}
+body#pmbopac .bouton:hover,
+body#pmbopac input[type="submit"]:hover { background: var(--color-primary-hover); }
+
+/* Champs de formulaire */
+body#pmbopac input[type="text"],
+body#pmbopac input[type="password"],
+body#pmbopac input[type="search"],
+body#pmbopac select, body#pmbopac textarea {
+  padding: var(--sp-3) var(--sp-4);
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius);
+  background: var(--color-surface); color: var(--color-text);
+  font: inherit; min-height: 44px;
+}
+
+/* Tableaux de données (exemplaires, etc.) */
+body#pmbopac table:not([role="presentation"]) th {
+  background: var(--color-surface-alt); font-weight: 700; text-align: left;
+}
+body#pmbopac table:not([role="presentation"]) th,
+body#pmbopac table:not([role="presentation"]) td {
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--color-border);
+}

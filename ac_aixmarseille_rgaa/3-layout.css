@@ -1,0 +1,131 @@
+/* ============================================================================
+   THÈME « ac_aixmarseille_rgaa » — 3/ STRUCTURE
+   Mapping des identifiants réels du portail (relevés dans l'export HTML
+   de la base mutualisée) vers le nouveau design.
+   ========================================================================== */
+
+/* ----- Conteneur général ----- */
+body#pmbopac #container {
+  max-width: var(--container);
+  margin-inline: auto;
+  background: transparent;
+}
+
+/* ----- Bandeau d'intro (« Base mutualisée de l'Académie… ») ----- */
+body#pmbopac #intro { background: transparent; margin-bottom: var(--sp-6); }
+body#pmbopac #intro_bibli h3 {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--color-text-soft);
+  padding: var(--sp-2) 0;
+}
+body#pmbopac #intro_bibli h3 strong { font-weight: 700; color: var(--color-text); }
+
+/* ----- Titre du portail + logos ----- */
+body#pmbopac #titrePortail a { text-decoration: none; color: inherit; display: flex; align-items: center; gap: var(--sp-4); }
+body#pmbopac #titrePortail #logo img { max-height: 64px; width: auto; }
+body#pmbopac #titrePortail .title_website h1 {
+  font-size: var(--fs-xl);
+  color: var(--color-text);
+  line-height: 1.15;
+}
+body#pmbopac #logo-city img { max-height: 56px; width: auto; }
+
+/* ----- Connexion (panneau replié) ----- */
+body#pmbopac #connexion {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-6);
+  z-index: 200;
+}
+body#pmbopac #connexion .login_invite { margin-bottom: var(--sp-3); }
+body#pmbopac #login_form label { font-weight: 500; }
+
+/* ----- Colonne latérale (#bandeau : accueil, carrousel, adresse) ----- */
+body#pmbopac #bandeau > div {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--sp-5);
+  margin-bottom: var(--sp-5);
+}
+body#pmbopac #bandeau h3 {
+  font-size: var(--fs-md);
+  padding-bottom: var(--sp-3);
+  margin-bottom: var(--sp-3);
+  border-bottom: 2px solid var(--bleu-france);
+}
+body#pmbopac #adresse { font-size: var(--fs-sm); color: var(--color-text-soft); }
+
+/* Carrousel d'actualités (bxSlider) */
+body#pmbopac .Slider .itemContent { border-radius: var(--radius); overflow: hidden; }
+body#pmbopac .Slider .sub-title { font-size: var(--fs-base); font-weight: 700; }
+body#pmbopac .Slider .resume { font-size: var(--fs-sm); color: var(--color-text-soft); }
+body#pmbopac .Slider .lirePlus {
+  font-weight: 600; color: var(--color-link); text-decoration: underline;
+  font-size: var(--fs-sm);
+}
+body#pmbopac .bx-pager-link {
+  width: 12px; height: 12px; border-radius: 50%;
+  background: var(--color-border-strong); text-indent: -9999px;
+}
+body#pmbopac .bx-pager-link.active { background: var(--bleu-france); }
+/* Contrôles du carrousel : cibles tactiles 44px (RGAA) */
+body#pmbopac .bx-prev, body#pmbopac .bx-next { min-width: 44px; min-height: 44px; }
+
+/* ----- Zone principale ----- */
+body#pmbopac #main { background: transparent; }
+
+/* « À la une » */
+body#pmbopac .AlaUne {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+}
+body#pmbopac .AlaUne h2 { font-size: var(--fs-lg); margin-bottom: var(--sp-3); }
+
+/* Sélections (vignettes) */
+body#pmbopac .listselect h3 {
+  font-size: var(--fs-xl);
+  padding-left: var(--sp-4);
+  border-left: 5px solid var(--accent-emeraude);
+  margin-bottom: var(--sp-5);
+}
+body#pmbopac .itemVign a {
+  display: block; background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius);
+  overflow: hidden; text-decoration: none; color: var(--color-text);
+}
+body#pmbopac .itemVign a:hover h5 { text-decoration: underline; }
+body#pmbopac .itemVign h5 { padding: var(--sp-3) var(--sp-4); font-size: var(--fs-base); }
+
+/* Navigateur (« Nouvelle recherche ») */
+body#pmbopac #navigator a {
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5);
+  border: 2px solid var(--color-primary); border-radius: var(--radius);
+  color: var(--color-primary); font-weight: 600; text-decoration: none;
+  min-height: 44px;
+}
+body#pmbopac #navigator a:hover { background: var(--bleu-france-950); }
+
+/* ----- Pied de page ----- */
+body#pmbopac #footer {
+  background: var(--grey-100);
+  color: #e8e8f0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  margin-top: var(--sp-12);
+  padding: var(--sp-10) var(--sp-6) var(--sp-6);
+}
+[data-contrast="aaa"] body#pmbopac #footer { background: #000; border-top: 2px solid #fff; border-radius: 0; }
+body#pmbopac #footer h4 { color: #fff; font-size: var(--fs-md); margin-bottom: var(--sp-3); }
+body#pmbopac #footer a { color: #c9c9e0; }
+body#pmbopac #footer a:hover, body#pmbopac #footer a:focus { color: #fff; }
+body#pmbopac #piedDePage .blocFooter { padding: var(--sp-4); }
+body#pmbopac #footer .Ancre a { font-weight: 600; }
+body#pmbopac #footer .intoBloc { font-size: var(--fs-sm); color: #c9c9e0; }
+body#pmbopac .logoPiedDePage img { background: #fff; padding: 6px 8px; border-radius: 6px; }

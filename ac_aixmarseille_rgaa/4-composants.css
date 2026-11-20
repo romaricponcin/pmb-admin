@@ -1,0 +1,144 @@
+/* ============================================================================
+   THÈME « ac_aixmarseille_rgaa » — 4/ COMPOSANTS
+   Menu horizontal, recherche, résultats, notices, pagination, facettes.
+   ========================================================================== */
+
+/* ----- MENU HORIZONTAL (.MenuHoriz) ----- */
+body#pmbopac .MenuHoriz {
+  background: var(--bleu-france);
+  border-radius: var(--radius);
+}
+[data-contrast="aaa"] body#pmbopac .MenuHoriz { background: #00006e; border-radius: 0; }
+[data-theme="dark"] body#pmbopac .MenuHoriz { background: #20203a; }
+
+body#pmbopac .MenuHoriz .Nav > li > a {
+  color: #fff !important;
+  font-weight: 500;
+  padding: var(--sp-4) var(--sp-5);
+  min-height: 44px;
+  display: inline-flex; align-items: center;
+  text-decoration: none;
+}
+body#pmbopac .MenuHoriz .Nav > li > a:hover,
+body#pmbopac .MenuHoriz .Nav > li > a:focus {
+  background: rgba(255,255,255,.12);
+}
+/* On conserve les accents de rubrique injectés par le CMS (li.itemNN:after) :
+   ils colorent le soulignement — compatible avec ce design. */
+
+/* Sous-menus déroulants */
+body#pmbopac .MenuHoriz .uk-dropdown {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--bleu-france);
+  box-shadow: var(--shadow-lg);
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: var(--sp-2);
+}
+body#pmbopac .MenuHoriz .SousNav > li > a {
+  color: var(--color-text) !important;
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-sm);
+  display: block; text-decoration: none;
+}
+body#pmbopac .MenuHoriz .SousNav > li > a:hover,
+body#pmbopac .MenuHoriz .SousNav > li > a:focus {
+  background: var(--bleu-france-950);
+}
+
+/* Menu mobile (offcanvas) */
+body#pmbopac .uk-offcanvas-bar { background: var(--grey-100); }
+body#pmbopac .NavResponsive a { color: #e8e8f0 !important; padding: var(--sp-3) var(--sp-4); min-height: 44px; }
+
+/* ----- RECHERCHE (.searchbox) ----- */
+body#pmbopac .searchbox {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+}
+body#pmbopac .searchbox .searchbox_title { font-size: var(--fs-xl); margin-bottom: var(--sp-3); }
+body#pmbopac .searchbox .research_inputs { display: flex; gap: 0; }
+body#pmbopac .searchbox input.search_txt {
+  flex: 1;
+  width: auto !important;            /* écrase le width:97% historique */
+  border-radius: var(--radius) 0 0 var(--radius);
+  border-right: none;
+  font-size: var(--fs-md);
+}
+body#pmbopac .searchbox .button_search_submit {
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+body#pmbopac .search_other_link a { font-weight: 500; font-size: var(--fs-sm); }
+
+/* ----- RÉSULTATS DE RECHERCHE (classes standard PMB) ----- */
+body#pmbopac .notice-parent, body#pmbopac .notice_ligne {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--sp-5);
+  margin-bottom: var(--sp-4);
+}
+body#pmbopac .notice-parent:hover { box-shadow: var(--shadow); }
+
+/* Liens de titre des notices */
+body#pmbopac .notice-heading a, body#pmbopac .titre_notice a {
+  font-size: var(--fs-md); font-weight: 700;
+  color: var(--color-text); text-decoration: none;
+}
+body#pmbopac .notice-heading a:hover, body#pmbopac .titre_notice a:hover { text-decoration: underline; }
+
+/* Étagère / vignettes de couvertures */
+body#pmbopac .vignette img, body#pmbopac img.vignette_img {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ----- FACETTES (colonne de filtres) ----- */
+body#pmbopac #facette, body#pmbopac .facette {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--sp-5);
+}
+body#pmbopac #facette h3, body#pmbopac .facette_titre {
+  font-size: var(--fs-base); font-weight: 700;
+  padding-bottom: var(--sp-2); margin-bottom: var(--sp-2);
+  border-bottom: 1px solid var(--color-border);
+}
+body#pmbopac #facette input[type="checkbox"] { accent-color: var(--bleu-france); width: 18px; height: 18px; }
+
+/* ----- PAGINATION (.navbar / numéros de page PMB) ----- */
+body#pmbopac .navbar a, body#pmbopac .navbar strong {
+  display: inline-grid; place-items: center;
+  min-width: 44px; min-height: 44px; padding-inline: var(--sp-3);
+  border: 1px solid var(--color-border); border-radius: var(--radius-sm);
+  background: var(--color-surface); color: var(--color-text);
+  text-decoration: none; font-weight: 500;
+}
+body#pmbopac .navbar a:hover { border-color: var(--bleu-france); color: var(--bleu-france); }
+body#pmbopac .navbar strong { background: var(--bleu-france); color: #fff; border-color: var(--bleu-france); }
+
+/* ----- FICHE NOTICE ----- */
+body#pmbopac .notice_affichage, body#pmbopac #notice_display {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--sp-8);
+}
+body#pmbopac .notice_affichage h3 { border-bottom: 2px solid var(--color-border); padding-bottom: var(--sp-2); }
+
+/* Onglets PMB (tablist) */
+body#pmbopac .tablist li a, body#pmbopac .onglet {
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: var(--sp-3) var(--sp-5);
+  min-height: 44px;
+}
+
+/* Étiquettes de disponibilité */
+body#pmbopac .exemplaire_dispo, body#pmbopac .statutex_1 { color: var(--accent-emeraude); font-weight: 600; }
+body#pmbopac .exemplaire_indispo { color: var(--accent-rouge); font-weight: 600; }
+
+/* ----- PANIER / iframes héritées ----- */
+body#pmbopac #resume_panier iframe { border: none; }

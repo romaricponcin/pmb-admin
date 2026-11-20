@@ -1,0 +1,125 @@
+/* ============================================================================
+   THÈME PMB « ac_aixmarseille_rgaa » — 1/ TOKENS
+   Portage du design RGAA vers l'OPAC PMB (base mutualisée Aix-Marseille).
+   Chargé en premier (ordre alphabétique des CSS du thème).
+   Les modes d'accessibilité sont pilotés par attributs sur <html>
+   (voir a11y-bar.js fourni dans le dossier js/ du thème).
+   ========================================================================== */
+
+/* Police Marianne — chargée depuis le CDN officiel DSFR.
+   Pour un usage hors-ligne : déposer les .woff2 dans styles/ac_aixmarseille_rgaa/fonts/
+   et remplacer les URLs ci-dessous. */
+@font-face {
+  font-family: 'Marianne';
+  src: url('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.12.1/dist/fonts/Marianne-Regular.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Marianne';
+  src: url('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.12.1/dist/fonts/Marianne-Medium.woff2') format('woff2');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Marianne';
+  src: url('https://cdn.jsdelivr.net/npm/@gouvfr/dsfr@1.12.1/dist/fonts/Marianne-Bold.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* — Charte État — */
+  --bleu-france:        #000091;
+  --bleu-france-hover:  #1212ff;
+  --bleu-france-975:    #f5f5fe;
+  --bleu-france-950:    #ececfe;
+  --bleu-france-925:    #e3e3fd;
+  --bleu-france-850:    #cacafb;
+
+  /* — Accents académiques (existant) — */
+  --accent-magenta:     #ba1d76;
+  --accent-magenta-975: #fbeff6;
+  --accent-emeraude:    #1d8a76;
+  --accent-emeraude-vif:#26a48f;
+  --accent-emeraude-975:#eef8f5;
+  --accent-lime:        #5a7d00;
+  --accent-lime-vif:    #afcd54;
+  --accent-lime-975:    #f6f9ec;
+  --accent-rouge:       #e1000f;
+
+  /* — Neutres — */
+  --grey-1000: #ffffff; --grey-975: #f6f6f6; --grey-950: #eeeeee;
+  --grey-900: #e5e5e5;  --grey-850: #dddddd; --grey-700: #929292;
+  --grey-600: #666666;  --grey-500: #555252; --grey-400: #3a3a3a;
+  --grey-200: #1f1f1f;  --grey-100: #161616;
+
+  /* — Rôles — */
+  --color-bg:            var(--grey-975);
+  --color-surface:       var(--grey-1000);
+  --color-surface-alt:   var(--grey-975);
+  --color-border:        var(--grey-900);
+  --color-border-strong: var(--grey-700);
+  --color-text:          #1b1b35;
+  --color-text-soft:     var(--grey-500);
+  --color-text-mute:     var(--grey-600);
+  --color-primary:       var(--bleu-france);
+  --color-primary-hover: var(--bleu-france-hover);
+  --color-primary-text:  #ffffff;
+  --color-link:          var(--bleu-france);
+  --color-link-visited:  #5a2d8a;
+
+  /* — Typo — */
+  --font-base: 'Marianne', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --fs-root: 100%;
+  --fs-xs: 0.75rem; --fs-sm: 0.875rem; --fs-base: 1rem; --fs-md: 1.125rem;
+  --fs-lg: 1.375rem; --fs-xl: 1.75rem; --fs-2xl: 2.25rem;
+  --lh-tight: 1.2; --lh-base: 1.6;
+  --ls-base: normal; --ws-base: normal; --para-space: 1em;
+
+  /* — Espacement / rayons / ombres — */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px;
+  --sp-6: 24px; --sp-8: 32px; --sp-10: 40px; --sp-12: 48px;
+  --radius-sm: 4px; --radius: 8px; --radius-lg: 16px; --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(0,0,18,.06), 0 1px 3px rgba(0,0,18,.05);
+  --shadow:    0 2px 6px rgba(0,0,18,.08), 0 4px 16px rgba(0,0,18,.06);
+  --shadow-lg: 0 8px 28px rgba(0,0,18,.14);
+  --container: 1280px;
+  --focus-ring: 3px solid var(--bleu-france);
+  --focus-offset: 2px;
+}
+
+/* ----- MODE SOMBRE ----- */
+[data-theme="dark"] {
+  --color-bg: #14141f; --color-surface: #1c1c2b; --color-surface-alt: #232336;
+  --color-border: #393952; --color-border-strong: #5a5a7a;
+  --color-text: #f2f2f7; --color-text-soft: #c4c4d6; --color-text-mute: #9b9bb5;
+  --color-primary: #8b8bff; --color-primary-hover: #a6a6ff; --color-primary-text: #12121c;
+  --color-link: #a6b8ff; --color-link-visited: #c9a6ff;
+  --accent-magenta: #f06bb8; --accent-emeraude: #4fd1b5; --accent-lime: #b6d96a;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.4); --shadow: 0 2px 8px rgba(0,0,0,.45);
+  --shadow-lg: 0 10px 30px rgba(0,0,0,.55);
+  --focus-ring: 3px solid #b0b0ff;
+}
+
+/* ----- CONTRASTE RENFORCÉ (AAA) ----- */
+[data-contrast="aaa"] {
+  --color-bg: #fff; --color-surface: #fff; --color-surface-alt: #fff;
+  --color-border: #000; --color-border-strong: #000;
+  --color-text: #000; --color-text-soft: #000; --color-text-mute: #1a1a1a;
+  --color-primary: #00006e; --color-primary-hover: #000091;
+  --color-link: #00006e; --color-link-visited: #4a0072;
+  --accent-magenta: #8a005a; --accent-emeraude: #00604f; --accent-lime: #3f5800;
+  --shadow-sm: none; --shadow: none; --shadow-lg: none;
+}
+[data-contrast="aaa"][data-theme="dark"] {
+  --color-bg: #000; --color-surface: #000; --color-surface-alt: #0a0a0a;
+  --color-border: #fff; --color-text: #fff; --color-text-soft: #fff;
+  --color-link: #9db4ff; --color-primary: #b8c4ff;
+}
+
+/* ----- POLICE ADAPTÉE (dys) / ESPACEMENT ----- */
+[data-dys="on"] {
+  --font-base: 'Comic Sans MS', 'Trebuchet MS', 'Marianne', sans-serif;
+  --lh-base: 1.9; --ls-base: 0.06em; --ws-base: 0.18em; --para-space: 1.6em;
+}
+[data-spacing="large"] {
+  --lh-base: 2; --ls-base: 0.05em; --ws-base: 0.16em; --para-space: 1.8em;
+}

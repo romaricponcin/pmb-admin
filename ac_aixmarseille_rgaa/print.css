@@ -1,0 +1,9 @@
+/* THÈME « ac_aixmarseille_rgaa » — Impression */
+@media print {
+  body#pmbopac { background: #fff; color: #000; font-size: 12pt; }
+  .a11y-fab, .a11y-panel, .a11y-overlay, .skip-links,
+  #btnMenuResp, .uk-offcanvas, .bx-controls { display: none !important; }
+  body#pmbopac #footer { background: none; color: #000; border-top: 1pt solid #000; }
+  body#pmbopac #footer a { color: #000; }
+  body#pmbopac a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; }
+}

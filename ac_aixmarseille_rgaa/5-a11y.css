@@ -1,0 +1,73 @@
+/* ============================================================================
+   THÈME « ac_aixmarseille_rgaa » — 5/ BARRE D'ACCESSIBILITÉ
+   Styles du panneau injecté par js/a11y-bar.js
+   ========================================================================== */
+
+/* Bouton flottant (créé par le JS s'il n'existe pas dans la page) */
+.a11y-fab {
+  position: fixed; right: var(--sp-5); bottom: var(--sp-5); z-index: 1450;
+  display: inline-flex; align-items: center; gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5); min-height: 48px;
+  border-radius: var(--radius-pill);
+  background: var(--bleu-france); color: #fff;
+  border: 2px solid #fff;
+  font-family: var(--font-base); font-size: var(--fs-sm); font-weight: 600;
+  cursor: pointer; box-shadow: var(--shadow-lg);
+}
+.a11y-fab:hover { background: var(--bleu-france-hover); }
+.a11y-fab svg { width: 22px; height: 22px; }
+[data-contrast="aaa"] .a11y-fab { background: #00006e; }
+
+/* Panneau */
+.a11y-panel {
+  position: fixed; top: 0; right: 0; z-index: 1500;
+  width: min(380px, 100vw); height: 100vh; height: 100dvh; overflow-y: auto;
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+  box-shadow: var(--shadow-lg);
+  transform: translateX(100%); transition: transform .28s ease;
+  padding: var(--sp-6);
+  font-family: var(--font-base);
+  color: var(--color-text);
+}
+.a11y-panel[data-open="true"] { transform: translateX(0); }
+.a11y-panel__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-5); }
+.a11y-panel__head h2 { font-size: var(--fs-lg); margin: 0; }
+.a11y-close {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: var(--radius);
+  border: 1px solid var(--color-border); background: var(--color-surface);
+  color: var(--color-text); cursor: pointer; font-size: 1.4rem;
+}
+.a11y-close:hover { background: var(--bleu-france-950); }
+.a11y-overlay {
+  position: fixed; inset: 0; z-index: 1400; background: rgba(0,0,18,.4);
+  opacity: 0; visibility: hidden; transition: opacity .28s ease, visibility .28s ease;
+}
+.a11y-overlay[data-open="true"] { opacity: 1; visibility: visible; }
+
+.a11y-group { margin: 0 0 var(--sp-6); padding: 0; border: none; }
+.a11y-group > legend {
+  font-size: var(--fs-sm); font-weight: 700; text-transform: uppercase;
+  letter-spacing: .04em; color: var(--color-text-mute);
+  margin-bottom: var(--sp-3); padding: 0;
+}
+.a11y-options { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.a11y-option {
+  flex: 1 1 auto;
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: var(--sp-3); min-height: 44px;
+  border: 2px solid var(--color-border); border-radius: var(--radius);
+  background: var(--color-surface); color: var(--color-text);
+  font-family: var(--font-base); font-size: var(--fs-sm); font-weight: 500;
+  cursor: pointer; text-align: center;
+}
+.a11y-option:hover { border-color: var(--bleu-france); background: var(--bleu-france-975); }
+.a11y-option[aria-pressed="true"] { border-color: var(--bleu-france); background: var(--bleu-france); color: #fff; }
+.a11y-reset {
+  width: 100%; padding: var(--sp-3); min-height: 44px;
+  border: 1px solid var(--color-border-strong); border-radius: var(--radius);
+  background: var(--color-surface); color: var(--color-text);
+  font-family: var(--font-base); font-weight: 500; cursor: pointer;
+}
+.a11y-reset:hover { border-color: var(--accent-magenta); color: var(--accent-magenta); background: var(--accent-magenta-975); }
